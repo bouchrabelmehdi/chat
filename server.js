@@ -14,7 +14,7 @@ var Message = mongoose.model('Message',{
   message : String
 })
 
-var url = 'mongodb://127.0.0.1/chat'
+var url = 'mongodb://bouchrabelmehdi.com/chat'
 
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
@@ -50,7 +50,7 @@ app.post('/messages', async (req, res) => {
   }
 })
 
-mongoose.connect(url ,{useNewUrlParser : true} ,(err) => {
+mongoose.connect(url ,{useUnifiedTopology: true ,useNewUrlParser : true} ,(err) => {
   console.log('mongodb connected',err);
 })
 
@@ -58,6 +58,6 @@ io.on('connection', () =>{
   console.log('user connected')
 })
 
-var server = http.listen(3000, () => {
+var server = http.listen(49500, () => {
   console.log('server connected on port', server.address().port);
 });

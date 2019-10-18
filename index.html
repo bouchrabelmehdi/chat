@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">	
 <head>
 <meta charset="UTF-8" />
@@ -68,12 +68,12 @@
         $("#messages").append("<h4> ".concat(message.name, " </h4> <p> ") .concat(message.message, " </p>"));
     }
     function getMessages(){
-      $.get('http://127.0.0.1:3000/messages', function(data){
+      $.get('http://bouchrabelmehdi.com:49500/messages', function(data){
         data.forEach(addMessages);
       })
     }
     function sendMessage(message){
-      $.post('http://127.0.0.1:3000/messages', message)
+      $.post('http://bouchrabelmehdi.com:49500/messages', message)
     }
 </script>
 
